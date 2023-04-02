@@ -111,3 +111,39 @@ AND name = 'William Shatner'
 AND id = 2
 AND name = 'Leonard Nimoy'
 ```
+
+
+### [Jira-Server.md.groovy](data/extractors/Jira-Server.md.groovy)
+
+Format the cells appropriately for Jira Server. This is a modified version of the Markdown-Groovy extractor, but tweaked to return Atlassian server's wiki markup instead of Markdown.
+
+Like the build-in Markdown extractor, this has different outputs depending on whether the result set is transposed or not.
+
+#### Default
+
+Copy:
+
+![jira-server-md-groovy-default](docs/jira-server-md-groovy-default.png)
+
+Paste:
+```
+|| ID || NAME || DATE_OF_BIRTH || SURNAME_IPA ||
+| 1 | William Shatner | 1931-03-22 | null |
+| 2 | Leonard Nimoy | 1931-03-26 | /ˈniːmɔɪ/ |
+| 3 | Nichelle Nichols | 1932-12-28 | /nɪˈʃɛl/ |
+```
+
+#### Transposed
+
+Copy:
+
+![jira-server-md-groovy-transposed](docs/jira-server-md-groovy-transposed.png)
+
+Paste:
+```
+|| || || || |
+| ID | 1 | 2 | 3 |
+| NAME | William Shatner | Leonard Nimoy | Nichelle Nichols |
+| DATE_OF_BIRTH | 1931-03-22 | 1931-03-26 | 1932-12-28 |
+| SURNAME_IPA | null | /ˈniːmɔɪ/ | /nɪˈʃɛl/ |
+```
