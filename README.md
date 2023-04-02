@@ -119,7 +119,7 @@ Format the cells appropriately for Jira Server. This is a modified version of th
 
 Like the build-in Markdown extractor, this has different outputs depending on whether the result set is transposed or not.
 
-#### Not Transposed
+#### Default
 
 Copy:
 
