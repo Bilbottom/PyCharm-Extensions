@@ -36,14 +36,14 @@ Please refer to the official aggregator and extractor documentation:
 This repo adds the following extensions:
 
 - **Aggregators**
-  - [COUNT_CHARS.groovy](data/aggregators/COUNT_CHARS.groovy)
-  - [COUNT_DISTINCT.groovy](data/aggregators/COUNT_DISTINCT.groovy)
-  - [COUNT_NULLS.groovy](data/aggregators/COUNT_NULLS.groovy)
-  - [HAS_BAD_CHARS.groovy](data/aggregators/HAS_BAD_CHARS.groovy)
+  - [COUNT_CHARS.groovy](pycharm-extensions/data/aggregators/COUNT_CHARS.groovy)
+  - [COUNT_DISTINCT.groovy](pycharm-extensions/data/aggregators/COUNT_DISTINCT.groovy)
+  - [COUNT_NULLS.groovy](pycharm-extensions/data/aggregators/COUNT_NULLS.groovy)
+  - [HAS_BAD_CHARS.groovy](pycharm-extensions/data/aggregators/HAS_BAD_CHARS.groovy)
 - **Extractors**
-  - [Jira-Server.md.groovy](data/extractors/Jira-Server.md.groovy)
-  - [One-Row.sql.groovy](data/extractors/One-Row.sql.groovy)
-  - [SQL-Where.sql.groovy](data/extractors/SQL-Where.sql.groovy)
+  - [Jira-Server.md.groovy](pycharm-extensions/data/extractors/Jira-Server.md.groovy)
+  - [One-Row.sql.groovy](pycharm-extensions/data/extractors/One-Row.sql.groovy)
+  - [SQL-Where.sql.groovy](pycharm-extensions/data/extractors/SQL-Where.sql.groovy)
 
 Details will be added below with the following example table:
 
@@ -56,28 +56,28 @@ Details will be added below with the following example table:
 
 ## Database Aggregators
 
-### [COUNT_CHARS.groovy](data/aggregators/COUNT_CHARS.groovy)
+### [COUNT_CHARS.groovy](pycharm-extensions/data/aggregators/COUNT_CHARS.groovy)
 
 Count the total number of characters across the selection. Intended to be used on a single cell at a time to quickly determine the length of its contents, but can be used on many cells to get the total number of characters over them.
 
 ![count-chars-groovy](docs/count-chars-groovy.png)
 
 
-### [COUNT_DISTINCT.groovy](data/aggregators/COUNT_DISTINCT.groovy)
+### [COUNT_DISTINCT.groovy](pycharm-extensions/data/aggregators/COUNT_DISTINCT.groovy)
 
 Count the number of distinct cells in the selection. Note that null values are not ignored and will count as a distinct value.
 
 ![count-distinct-groovy](docs/count-distinct-groovy.png)
 
 
-### [COUNT_NULLS.groovy](data/aggregators/COUNT_NULLS.groovy)
+### [COUNT_NULLS.groovy](pycharm-extensions/data/aggregators/COUNT_NULLS.groovy)
 
 Count the number of cells that have a null value.
 
 ![count-nulls-groovy](docs/count-nulls-groovy.png)
 
 
-### [HAS_BAD_CHARS.groovy](data/aggregators/HAS_BAD_CHARS.groovy)
+### [HAS_BAD_CHARS.groovy](pycharm-extensions/data/aggregators/HAS_BAD_CHARS.groovy)
 
 Count the number of cells (not the number of characters) that have at least one "bad character". As an English speaker, a "good character" is any character between a space (` `, U+0020) and a tilde (`~`, U+0126) on the ASCII/unicode scale, and a "bad character" is any character that is not a "good character". Null values are not counted (but the null character, U+0000, is).
 
@@ -86,7 +86,7 @@ Count the number of cells (not the number of characters) that have at least one 
 
 ## Database Extractors
 
-### [Jira-Server.md.groovy](data/extractors/Jira-Server.md.groovy)
+### [Jira-Server.md.groovy](pycharm-extensions/data/extractors/Jira-Server.md.groovy)
 
 Format the cells appropriately for Jira Server. This is a modified version of the Markdown-Groovy extractor, but tweaked to return Atlassian server's wiki markup instead of Markdown.
 
@@ -122,7 +122,7 @@ Paste:
 ```
 
 
-### [One-Row.sql.groovy](data/extractors/One-Row.sql.groovy)
+### [One-Row.sql.groovy](pycharm-extensions/data/extractors/One-Row.sql.groovy)
 
 Simply join the selected cells (values only) using a comma and space as a separator, quoting the values if needed. Handy for copying values to put inside an `IN` statement.
 
@@ -136,7 +136,7 @@ Paste:
 ```
 
 
-### [SQL-Where.sql.groovy](data/extractors/SQL-Where.sql.groovy)
+### [SQL-Where.sql.groovy](pycharm-extensions/data/extractors/SQL-Where.sql.groovy)
 
 Join the selected cells' values with the column names ready to be pasted into a `WHERE` clause. Intended to be used for a single row at a time, but can be used on many.
 
