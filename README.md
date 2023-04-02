@@ -31,7 +31,7 @@ Please refer to the official aggregator and extractor documentation:
 - https://www.jetbrains.com/help/pycharm/data-extractors.html
 
 
-## Custom Extensions
+# Custom Extensions
 
 This repo adds the following extensions:
 
@@ -41,6 +41,7 @@ This repo adds the following extensions:
   - [COUNT_NULLS.groovy](data/aggregators/COUNT_NULLS.groovy)
   - [HAS_BAD_CHARS.groovy](data/aggregators/HAS_BAD_CHARS.groovy)
 - **Extractors**
+  - [Jira-Server.md.groovy](data/extractors/Jira-Server.md.groovy)
   - [One-Row.sql.groovy](data/extractors/One-Row.sql.groovy)
   - [SQL-Where.sql.groovy](data/extractors/SQL-Where.sql.groovy)
 
@@ -53,9 +54,11 @@ Details will be added below with the following example table:
 |   3 | Nichelle Nichols | 1932-12-28    | /nɪˈʃɛl/                                 |
 
 
+## Database Aggregators
+
 ### [COUNT_CHARS.groovy](data/aggregators/COUNT_CHARS.groovy)
 
-Count the total number of characters across the selection. Intended to be used on a single cell at a time to quickly determine the length of its contents.
+Count the total number of characters across the selection. Intended to be used on a single cell at a time to quickly determine the length of its contents, but can be used on many cells to get the total number of characters over them.
 
 ![count-chars-groovy](docs/count-chars-groovy.png)
 
@@ -81,37 +84,7 @@ Count the number of cells (not the number of characters) that have at least one 
 ![has-bad-chars-groovy](docs/has-bad-chars-groovy.png)
 
 
-### [One-Row.sql.groovy](data/extractors/One-Row.sql.groovy)
-
-Simply join the selected cells (values only) using a comma and space as a separator, quoting the values if needed. Handy for copying values to put inside an `IN` statement.
-
-Copy:
-
-![one-row-sql-groovy](docs/one-row-sql-groovy.png)
-
-Paste:
-```
-1, 'William Shatner', 2, 'Leonard Nimoy'
-```
-
-
-### [SQL-Where.sql.groovy](data/extractors/SQL-Where.sql.groovy)
-
-Join the selected cells' values with the column names ready to be pasted into a `WHERE` clause. Intended to be used for a single row at a time, but can be used on many.
-
-Copy:
-
-![one-row-sql-groovy](docs/one-row-sql-groovy.png)
-
-Paste:
-```
-WHERE 1=1
-AND id = 1
-AND name = 'William Shatner'
-AND id = 2
-AND name = 'Leonard Nimoy'
-```
-
+## Database Extractors
 
 ### [Jira-Server.md.groovy](data/extractors/Jira-Server.md.groovy)
 
@@ -146,4 +119,36 @@ Paste:
 | NAME | William Shatner | Leonard Nimoy | Nichelle Nichols |
 | DATE_OF_BIRTH | 1931-03-22 | 1931-03-26 | 1932-12-28 |
 | SURNAME_IPA | null | /ˈniːmɔɪ/ | /nɪˈʃɛl/ |
+```
+
+
+### [One-Row.sql.groovy](data/extractors/One-Row.sql.groovy)
+
+Simply join the selected cells (values only) using a comma and space as a separator, quoting the values if needed. Handy for copying values to put inside an `IN` statement.
+
+Copy:
+
+![one-row-sql-groovy](docs/one-row-sql-groovy.png)
+
+Paste:
+```
+1, 'William Shatner', 2, 'Leonard Nimoy'
+```
+
+
+### [SQL-Where.sql.groovy](data/extractors/SQL-Where.sql.groovy)
+
+Join the selected cells' values with the column names ready to be pasted into a `WHERE` clause. Intended to be used for a single row at a time, but can be used on many.
+
+Copy:
+
+![one-row-sql-groovy](docs/one-row-sql-groovy.png)
+
+Paste:
+```
+WHERE 1=1
+AND id = 1
+AND name = 'William Shatner'
+AND id = 2
+AND name = 'Leonard Nimoy'
 ```
